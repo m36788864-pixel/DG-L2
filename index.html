@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>DELEF FEST GOPASS</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        href="images/logo1.png"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="css/app.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
+
+        <div class="wrap nav">
+
+            <!-- Logo -->
+            <a
+                class="brand"
+                href="index.html"
+            >
+                <img
+                    src="images/logo1.png"
+                    alt="DELEF FEST"
+                >
+
+                <span>
+                    DELEF FEST
+                    <small>GOPASS</small>
+                </span>
+            </a>
+
+
+            <!-- Navigation -->
+            <nav>
+
+                <a
+                    class="active"
+                    href="index.html"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    หน้าแรก
+                </a>
+
+                <a href="/events.html">
+                    <i class="fa-solid fa-ticket"></i>
+                    คอนเสิร์ต
+                </a>
+
+                <a href="/events.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    ปฏิทิน
+                </a>
+
+            </nav>
+
+
+            <!-- Login -->
+            <a
+                class="login-btn"
+                href="/login.html"
+            >
+                <i class="fa-brands fa-discord"></i>
+                เข้าสู่ระบบ
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero wrap">
+
+        <div class="hero-copy">
+
+            <span class="kicker">
+                DELEF FEST GOPASS
+            </span>
+
+            <h1>
+                กดบัตรคอนเสิร์ต
+                <br>
+
+                <b>
+                    ง่าย • เร็ว • พร้อมลุย
+                </b>
+            </h1>
+
+            <p>
+                เลือกงานที่ต้องการ ดูรายละเอียด
+                และเข้าสู่ระบบกดบัตรได้ในไม่กี่ขั้นตอน
+            </p>
+
+            <a
+                class="btn red"
+                href="/events.html"
+            >
+                ดูคอนเสิร์ต
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- Hero Video -->
+        <div class="hero-art">
+
+            <video autoplay loop muted playsinline poster="images/event-banner.png">
+                <source src="images/loop.mp4" type="video/mp4">
+                เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+            </video>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOW ON SALE
+    ========================== -->
+    <section class="wrap section">
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="kicker">
+                    NOW ON SALE
+                </span>
+
+                <h2>
+                    งานที่กำลังเปิดขาย
+                </h2>
+
+            </div>
+
+
+            <a href="/events.html">
+                ดูทั้งหมด
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- Concert Cards -->
+        <div
+            id="homeEvents"
+            class="cards"
+        >
+            <!-- JavaScript จะสร้างงานตรงนี้ -->
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LATEST NEWS
+    ========================== -->
+    <section class="wrap section">
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="kicker">
+                    LATEST
+                </span>
+
+                <h2>
+                    ข่าวสาร / อัปเดต
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="news-grid">
+
+            <!-- News 1 -->
+            <article>
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                <div>
+
+                    <small>
+                        DELEF FEST GOPASS
+                    </small>
+
+                    <h3>
+                        ระบบพร้อมสำหรับการเพิ่มงานจากหน้า Admin
+                    </h3>
+
+                    <p>
+                        แอดมินสามารถเพิ่ม Poster และรายละเอียดงาน
+                        แล้วงานจะขึ้นหน้าเว็บทันที
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- News 2 -->
+            <article>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <small>
+                        SECURE TICKETING
+                    </small>
+
+                    <h3>
+                        ออกแบบให้พร้อมต่อยอดระบบจริง
+                    </h3>
+
+                    <p>
+                        โครงสร้างหน้าเว็บแยกเป็นงาน รายละเอียด
+                        คิว และเลือกบัตร
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section class="contact-section">
+
+        <div class="contact-title">
+
+            <span>
+                CONTACT
+            </span>
+
+            <h2>
+                ช่องทางการติดต่อ
+            </h2>
+
+            <p>
+                ติดตามข่าวสารและสอบถามข้อมูลเพิ่มเติม
+            </p>
+
+        </div>
+
+
+        <div class="contact-links">
+
+            <!-- YouTube -->
+            <a
+                href="https://www.youtube.com/@delef.event.organi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+            >
+                <i class="fa-brands fa-youtube"></i>
+
+                <div>
+
+                    <strong>
+                        YouTube
+                    </strong>
+
+                    <small>
+                        @delef.event.organi
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+            </a>
+
+
+            <!-- Instagram -->
+            <a
+                href="https://www.instagram.com/delef_fest"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+            >
+                <i class="fa-brands fa-instagram"></i>
+
+                <div>
+
+                    <strong>
+                        Instagram
+                    </strong>
+
+                    <small>
+                        @delef_fest
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+            </a>
+
+
+            <!-- TikTok -->
+            <a
+                href="https://www.tiktok.com/@delef.event.organi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+            >
+                <i class="fa-brands fa-tiktok"></i>
+
+                <div>
+
+                    <strong>
+                        TikTok
+                    </strong>
+
+                    <small>
+                        @delef.event.organi
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+            </a>
+
+
+            <!-- Discord -->
+            <a
+                href="https://discord.gg/6GCqjbbaZN"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+            >
+                <i class="fa-brands fa-discord"></i>
+
+                <div>
+
+                    <strong>
+                        Discord
+                    </strong>
+
+                    <small>
+                        DELEF FEST COMMUNITY
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div class="wrap footer">
+
+            <span>
+                © 2026 DELEF FEST GOPASS
+            </span>
+
+
+            <a href="/admin/events.html">
+
+                <i class="fa-solid fa-lock"></i>
+                Admin
+
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="js/app.js"></script>
+
+    <script>
+        renderHome();
+        // Keep the hero image reliable on Render/static hosting.
+        const heroImage = document.querySelector('.hero-art img');
+        if (heroImage) {
+            heroImage.addEventListener('load', () => document.querySelector('.hero-art')?.classList.add('image-ready'));
+            heroImage.addEventListener('error', () => document.querySelector('.hero-art')?.classList.add('image-error'));
+        }
+    </script>
+
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>

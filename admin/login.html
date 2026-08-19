@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>เข้าสู่ระบบแอดมิน | DELEF FEST GOPASS</title>
+    <link rel="icon" href="../images/logo1.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body class="login-page admin-login">
+
+    <!-- =========================
+         ADMIN LOGIN
+    ========================== -->
+    <section class="login-box admin-login-box">
+
+        <a class="brand center" href="../index.html">
+            <img src="../images/logo1.png" alt="DELEF FEST">
+            <span>
+                DELEF FEST
+                <small>GOPASS ADMIN</small>
+            </span>
+        </a>
+
+        <h1>เข้าสู่ระบบแอดมิน</h1>
+        <p>จัดการคอนเสิร์ต ดูยอดขาย และอัปโหลด Poster ได้จากที่นี่</p>
+
+        <form id="adminLoginForm" class="admin-login-form">
+
+            <label>
+                ชื่อผู้ใช้
+                <input name="username" type="text" autocomplete="username" required autofocus>
+            </label>
+
+            <label class="password-field">
+                รหัสผ่าน
+                <span class="password-wrap">
+                    <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+                    <button type="button" class="password-toggle" id="toggleAdminPassword" aria-label="แสดงรหัสผ่าน">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </span>
+            </label>
+
+            <button class="btn red full" type="submit">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                เข้าสู่ระบบ
+            </button>
+
+        </form>
+
+        <small class="admin-hint">
+            บัญชีเริ่มต้นตั้งค่าไว้ที่ไฟล์ <code>data/admin.json</code> (ดูรายละเอียดใน README) —
+            แนะนำให้เปลี่ยนรหัสผ่านก่อนใช้งานจริง
+        </small>
+
+        <a href="../index.html" class="back">
+            <i class="fa-solid fa-arrow-left"></i>
+            กลับหน้าเว็บหลัก
+        </a>
+
+    </section>
+
+    <script src="../js/app.js"></script>
+    <script>
+        initAdminLogin();
+
+        const pass = document.getElementById("adminPassword");
+        const toggle = document.getElementById("toggleAdminPassword");
+        toggle?.addEventListener("click", () => {
+            const visible = pass.type === "text";
+            pass.type = visible ? "password" : "text";
+            toggle.innerHTML = visible
+                ? '<i class="fa-regular fa-eye"></i>'
+                : '<i class="fa-regular fa-eye-slash"></i>';
+            toggle.setAttribute("aria-label", visible ? "แสดงรหัสผ่าน" : "ซ่อนรหัสผ่าน");
+        });
+    </script>
+
+    <script src="../js/i18n.js"></script>
+</body>
+
+</html>

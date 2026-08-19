@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>ใบเสร็จ | DELEF FEST GOPASS</title>
+
+<link rel="icon" href="images/logo1.png">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+<link rel="stylesheet" href="css/app.css">
+
+<style>
+.receipt-page{
+  padding:42px 0 70px;
+}
+
+.receipt-wrap{
+  max-width:700px;
+  margin:auto;
+}
+
+.receipt-steps{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:25px;
+}
+
+.rs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#aaa;
+  font-size:12px;
+}
+
+.rs span{
+  width:36px;
+  height:36px;
+  border:1px solid #ddd;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+}
+
+.rs.done span,
+.rs.active span{
+  background:#e0000b;
+  color:#fff;
+  border-color:#e0000b;
+}
+
+.rs.active{
+  color:#e0000b;
+}
+
+.rline{
+  height:1px;
+  width:80px;
+  background:#ddd;
+}
+
+.receipt{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 15px 45px #0000000b;
+}
+
+.receipt-head{
+  text-align:center;
+  padding:30px;
+  border-bottom:1px dashed #ccc;
+}
+
+.check{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#e9f8ee;
+  color:#16813c;
+  display:grid;
+  place-items:center;
+  margin:auto;
+  font-size:27px;
+}
+
+.receipt-head h1{
+  margin:12px 0 4px;
+}
+
+.receipt-head p{
+  margin:0;
+  color:#777;
+  font-size:13px;
+}
+
+.receipt-body{
+  padding:28px;
+}
+
+.receipt-id{
+  background:#fafafa;
+  border-radius:10px;
+  text-align:center;
+  padding:13px;
+  margin-bottom:18px;
+}
+
+.receipt-id small{
+  display:block;
+  color:#999;
+}
+
+.receipt-id strong{
+  font-size:20px;
+  letter-spacing:1px;
+}
+
+.rrow{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+  font-size:13px;
+}
+
+.rrow span{
+  color:#777;
+}
+
+.rrow b{
+  text-align:right;
+}
+
+.r-total{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 0;
+  font-size:19px;
+}
+
+.r-total b{
+  color:#e0000b;
+}
+
+.receipt-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+}
+
+.outline{
+  background:#fff!important;
+  color:#e0000b!important;
+  border:1px solid #e0000b!important;
+}
+
+.receipt-foot{
+  text-align:center;
+  color:#999;
+  font-size:11px;
+  padding:0 20px 25px;
+}
+
+/* กำลังสร้าง JPG */
+.jpg-loading{
+  pointer-events:none;
+  opacity:.7;
+}
+
+/* มือถือ */
+@media(max-width:560px){
+
+  .receipt-actions{
+    grid-template-columns:1fr;
+  }
+
+  .rline{
+    width:20px;
+  }
+
+  .receipt-body{
+    padding:20px;
+  }
+
+  .rrow{
+    gap:10px;
+  }
+
+  .rrow b{
+    max-width:60%;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+  <div class="wrap nav">
+
+    <a class="brand" href="index.html">
+
+      <img src="images/logo1.png">
+
+      <span>
+        DELEF FEST
+        <small>GOPASS</small>
+      </span>
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<main class="wrap receipt-page">
+
+<div class="receipt-wrap">
+
+
+<!-- ขั้นตอน -->
+
+<div class="receipt-steps">
+
+  <div class="rs done">
+    <span>01</span>
+    <small>เลือกบัตร</small>
+  </div>
+
+  <div class="rline"></div>
+
+  <div class="rs done">
+    <span>02</span>
+    <small>ข้อมูลผู้ซื้อ</small>
+  </div>
+
+  <div class="rline"></div>
+
+  <div class="rs active">
+    <span>03</span>
+    <small>ใบเสร็จ</small>
+  </div>
+
+</div>
+
+
+<!-- ใบเสร็จ -->
+
+<section class="receipt" id="receipt">
+
+
+  <div class="receipt-head">
+
+    <div class="check">
+      <i class="fa-solid fa-check"></i>
+    </div>
+
+    <h1>ทำรายการสำเร็จ</h1>
+
+    <p>
+      ระบบบันทึกข้อมูลการสั่งซื้อของคุณแล้ว
+    </p>
+
+  </div>
+
+
+  <div class="receipt-body">
+
+
+    <!-- เลขรายการ -->
+
+    <div class="receipt-id">
+
+      <small>
+        เลขที่รายการ
+      </small>
+
+      <strong id="orderNo">
+        กำลังโหลด...
+      </strong>
+
+    </div>
+
+
+    <!-- ข้อมูล -->
+
+    <div id="info">
+      กำลังโหลด...
+    </div>
+
+
+    <!-- ปุ่ม -->
+
+    <div class="receipt-actions">
+
+      <button
+        id="downloadBtn"
+        class="btn red"
+        onclick="downloadReceiptJPG()"
+      >
+        <i class="fa-solid fa-image"></i>
+        บันทึกใบเสร็จ JPG
+      </button>
+
+
+      <a
+        class="btn outline"
+        href="index.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        กลับหน้าแรก
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="receipt-foot">
+
+    DELEF FEST GOPASS ·
+    กรุณาเก็บใบเสร็จนี้ไว้สำหรับตรวจสอบรายการ
+
+  </div>
+
+
+</section>
+
+</div>
+
+</main>
+
+
+<!-- html2canvas -->
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+</script>
+
+
+<script>
+
+/* ================================
+   รับข้อมูลจาก URL
+================================ */
+
+const p=new URLSearchParams(location.search),id=p.get("id"),orderId=p.get("order");
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+async function load(){
+  try{
+    const [er,or]=await Promise.all([fetch("/api/events/"+encodeURIComponent(id)),fetch("/api/orders/"+encodeURIComponent(orderId))]);
+    if(!er.ok||!or.ok)throw new Error("โหลดรายการไม่สำเร็จ");
+    const e=await er.json(),o=await or.json(),b=o.buyer||{};
+     // Retry the Sheets webhook so a receipt visit can repair a missed sync.
+     if(b.email){
+       try{
+         const sr=await fetch("/api/orders/"+encodeURIComponent(orderId)+"/sync-sheet",{method:"POST",headers:{"Content-Type":"application/json"}});
+         const sj=await sr.json().catch(()=>null);
+         if(!sr.ok || !sj?.ok) console.warn("[google-sheet] receipt sync failed:",sj);
+         else console.log("[google-sheet] receipt sync ok:",sj);
+       }catch(syncErr){ console.warn("[google-sheet] receipt sync network error:",syncErr); }
+     }
+    document.getElementById("orderNo").textContent=o.queueCode||o.id;
+    document.getElementById("info").innerHTML=`
+      <div class="rrow"><span>งาน</span><b>${esc(e.name)}</b></div>
+      <div class="rrow"><span>วันที่ / เวลา</span><b>${esc(e.date)} · ${esc(e.time)} น.</b></div>
+      <div class="rrow"><span>สถานที่</span><b>${esc(e.venue)}</b></div>
+      <div class="rrow"><span>ประเภทบัตร</span><b>${esc(o.ticketName||o.ticketType)}</b></div>
+      <div class="rrow"><span>จำนวน</span><b>${o.qty} ใบ</b></div>
+      <div class="rrow"><span>อีเมล</span><b>${esc(b.email)}</b></div>
+      <div class="rrow"><span>Discord</span><b>${esc(b.discord)}</b></div>
+      <div class="rrow"><span>Roblox</span><b>${esc(b.roblox)}</b></div>
+      <div class="r-total"><span>ยอดรวม</span><b>${Number(o.total)===0?"ฟรี":Number(o.total).toLocaleString("th-TH")+" บาท"}</b></div>`;
+  }catch(error){console.error(error);document.getElementById("info").textContent="ไม่สามารถโหลดรายละเอียดรายการได้";}
+}
+/* ================================
+   ดาวน์โหลดใบเสร็จเป็น JPG
+================================ */
+
+async function downloadReceiptJPG(){
+
+  const receipt =
+    document.getElementById("receipt");
+
+
+  const button =
+    document.getElementById("downloadBtn");
+
+
+  if(!receipt){
+
+    alert("ไม่พบใบเสร็จ");
+
+    return;
+  }
+
+
+  try{
+
+    /* ป้องกันกดซ้ำ */
+
+    button.classList.add("jpg-loading");
+
+    button.disabled = true;
+
+
+    button.innerHTML = `
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      กำลังสร้าง JPG...
+    `;
+
+
+    /*
+      รอให้ Font / รูปภาพโหลด
+    */
+
+    if(document.fonts && document.fonts.ready){
+
+      await document.fonts.ready;
+
+    }
+
+
+    /*
+      สร้างภาพจากใบเสร็จ
+    */
+
+    const canvas =
+      await html2canvas(
+        receipt,
+        {
+
+          scale:2,
+
+          backgroundColor:"#ffffff",
+
+          useCORS:true,
+
+          logging:false,
+
+          windowWidth:
+            receipt.scrollWidth,
+
+          windowHeight:
+            receipt.scrollHeight
+
+        }
+      );
+
+
+    /*
+      แปลง Canvas เป็น JPG
+      0.95 = คุณภาพสูง
+    */
+
+    const jpg =
+      canvas.toDataURL(
+        "image/jpeg",
+        0.95
+      );
+
+
+    /*
+      ตั้งชื่อไฟล์
+    */
+
+    let orderNo =
+      document
+        .getElementById("orderNo")
+        .textContent
+        .trim();
+
+
+    if(!orderNo ||
+       orderNo === "กำลังโหลด..."){
+
+      orderNo =
+        "DELEF-RECEIPT";
+
+    }
+
+
+    /*
+      ดาวน์โหลด
+    */
+
+    const link =
+      document.createElement("a");
+
+
+    link.href = jpg;
+
+    link.download =
+      orderNo + ".jpg";
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+
+  }catch(error){
+
+    console.error(
+      "JPG ERROR:",
+      error
+    );
+
+
+    alert(
+      "ไม่สามารถสร้างไฟล์ JPG ได้\nกรุณาลองใหม่อีกครั้ง"
+    );
+
+
+  }finally{
+
+    /*
+      คืนค่าปุ่ม
+    */
+
+    button.classList.remove("jpg-loading");
+
+    button.disabled = false;
+
+    button.innerHTML = `
+      <i class="fa-solid fa-image"></i>
+      บันทึกใบเสร็จ JPG
+    `;
+
+  }
+
+}
+
+
+/* ================================
+   เริ่มโหลด
+================================ */
+
+load();
+
+</script>
+
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>

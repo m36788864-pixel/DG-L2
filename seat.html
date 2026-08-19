@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>เลือกบัตร | DELEF FEST GOPASS</title>
+    <link rel="icon" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap nav">
+            <a class="brand" href="index.html">
+                <img src="images/logo1.png" alt="DELEF FEST">
+                <span>
+                    DELEF FEST
+                    <small>GOPASS</small>
+                </span>
+            </a>
+
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a>
+                <a class="active" href="events.html"><i class="fa-solid fa-ticket"></i> คอนเสิร์ต</a>
+            </nav>
+
+            <div class="timer">
+                <i class="fa-solid fa-clock"></i>
+                <span>เวลาที่เหลือ</span>
+                <b id="timer">10:00</b>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap page">
+        <div id="seatPage"></div>
+    </main>
+
+    <section class="contact-section">
+        <div class="contact-title">
+            <span>CONTACT</span>
+            <h2>ช่องทางการติดต่อ</h2>
+            <p>ติดตามข่าวสารและสอบถามข้อมูลเพิ่มเติม</p>
+        </div>
+
+        <div class="contact-links">
+            <a href="#" class="contact-item">
+                <i class="fa-brands fa-youtube"></i>
+                <div><strong>YouTube</strong><small>DELEF FEST</small></div>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+            </a>
+            <a href="#" class="contact-item">
+                <i class="fa-brands fa-instagram"></i>
+                <div><strong>Instagram</strong><small>@deleffest</small></div>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+            </a>
+            <a href="#" class="contact-item">
+                <i class="fa-brands fa-tiktok"></i>
+                <div><strong>TikTok</strong><small>@deleffest</small></div>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+            </a>
+            <a href="#" class="contact-item">
+                <i class="fa-brands fa-discord"></i>
+                <div><strong>Discord</strong><small>DELEF FEST COMMUNITY</small></div>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+            </a>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>renderSeat();</script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: deleffest-gopass
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GOOGLE_SHEET_WEBHOOK_URL
+        sync: false
+      - key: GOOGLE_SHEET_SECRET
+        sync: false

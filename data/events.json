@@ -1,0 +1,58 @@
+[
+  {
+    "id": "historyland-2026",
+    "name": "Historyland 2026",
+    "date": "2026-08-22",
+    "time": "17:00",
+    "venue": "Camp Ground 22",
+    "regular": 1500,
+    "vip": 3500,
+    "status": "เปิดขาย",
+    "image": "/images/event1.png",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z",
+    "limitPerOrder": 10,
+    "ticketTypes": [
+      {
+        "id": "regular",
+        "name": "บัตรธรรมดา",
+        "description": "สิทธิ์เข้างานตามมาตรฐาน",
+        "price": 1500
+      },
+      {
+        "id": "vip",
+        "name": "บัตร VIP",
+        "description": "สิทธิ์พิเศษสำหรับผู้ถือบัตร VIP",
+        "price": 3500
+      }
+    ]
+  },
+  {
+    "id": "delef-fest-2026",
+    "name": "DELEF FEST 2026",
+    "date": "2026-10-25",
+    "time": "18:00",
+    "venue": "IMPACT ARENA",
+    "regular": 1800,
+    "vip": 4500,
+    "status": "เร็ว ๆ นี้",
+    "image": "/images/event-banner.png",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-01T00:00:00.000Z",
+    "limitPerOrder": 10,
+    "ticketTypes": [
+      {
+        "id": "regular",
+        "name": "บัตรธรรมดา",
+        "description": "สิทธิ์เข้างานตามมาตรฐาน",
+        "price": 1800
+      },
+      {
+        "id": "vip",
+        "name": "บัตร VIP",
+        "description": "สิทธิ์พิเศษสำหรับผู้ถือบัตร VIP",
+        "price": 4500
+      }
+    ]
+  }
+]
