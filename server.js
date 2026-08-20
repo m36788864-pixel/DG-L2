@@ -6,7 +6,6 @@ const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 
 const JsonDb = require("./lib/jsonDb");
-const { verifyLogin, createSession, destroySession, requireAuth } = require("./lib/auth");
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
@@ -31,6 +30,9 @@ function loadLocalEnv(filePath) {
 }
 
 loadLocalEnv(path.join(ROOT, ".env"));
+
+// Load auth only after .env so ADMIN_USER / ADMIN_PASS are available.
+const { verifyLogin, createSession, destroySession, requireAuth } = require("./lib/auth");
 
 const UPLOAD_DIR = path.join(ROOT, "uploads");
 if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
