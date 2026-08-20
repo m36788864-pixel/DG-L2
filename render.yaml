@@ -7,6 +7,10 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: ADMIN_USER
+        sync: false
+      - key: ADMIN_PASS
+        sync: false
       - key: GOOGLE_SHEET_WEBHOOK_URL
         sync: false
       - key: GOOGLE_SHEET_SECRET
